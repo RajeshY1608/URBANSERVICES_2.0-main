@@ -1,0 +1,66 @@
+
+{
+    "intents": [
+
+     
+      {
+        "tag": "greeting",
+        "patterns": ["hello", "hi", "hey"],
+        "responses": ["Hello there!", "Hi!", "Hey! How can I assist you today?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["bye", "goodbye", "see you later"],
+        "responses": ["Goodbye!", "See you later!", "Have a great day!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["thank you", "thanks", "appreciate it"],
+        "responses": ["You're welcome!", "No problem!", "My pleasure!"]
+      },
+      {
+        "tag": "help",
+        "patterns": ["help", "assistance", "support"],
+        "responses": ["How can I help you?", "What do you need help with?", "I'm here to assist you."]
+      },
+      {
+        "tag": "product",
+        "patterns": ["What products do you offer?", "What are your products?", "Can you tell me about your products?"],
+        "responses": ["We offer a wide range of products, including X, Y, and Z. What are you interested in?"]
+      },
+      {
+        "tag": "purchase",
+        "patterns": ["How can I buy your products?", "What's the purchasing process?", "Can I buy directly from your website?"],
+        "responses": ["You can purchase our products directly from our website. Simply browse our products, select the items you want to buy, and proceed to checkout."]
+      },
+      {
+        "tag": "location",
+        "patterns": ["Where are you located?", "What's your address?", "Do you have a physical store?"],
+        "responses": ["We're located at 123 Main Street, Anytown, USA. Come visit us anytime!"]
+      },
+    
+      {
+        "tag": "all services",
+        "patterns": ["all"],
+        "responses": ["HomeClening,WomanHairCut" ]
+      },
+      {
+        "tag": "What is urbanservices",
+        "patterns": ["what"],
+        "responses": ["The term  generally refers to the basic services and amenities that are necessary to sustain and improve the quality of life in urban areas. These services may include things like transportation, waste management, water supply and sanitation, public safety, healthcare, education, and social services. Urban services are essential for ensuring that cities and urban areas are livable and functional, and that their residents can enjoy a decent standard of living. They are typically provided by local governments or other service providers, and may be funded through a combination of taxes, user fees, and other sources of revenue." ]
+      },
+      {
+        "tag": "payment not refund",
+        "patterns": ["payment refund"],
+        "responses": ["I'm sorry to hear that you're experiencing issues with a payment and have not received a refund. If you made a payment for a product or service and did not receive what you paid for, it's important to first check the payment terms and policies of the company or service provider." ]
+      },
+     
+      {
+        "tag": "how can i buy service",
+        "patterns": ["getservice","me apki service kaise lu"],
+        "responses": ["Go to all Service Page after Select your service, go to booking page Click on booknow, Choose Paymemt method and Buy Service, Thank you for using urban services , Enjoy your Service 😉  "]
+        
+      }
+    ]
+  }
+  
