@@ -54,6 +54,7 @@ const WishlistScreen = ({navigation}) => {
   };
   
   return (
+
     <View>
     <View style={{
                 backgroundColor:"#f5f5fa",
@@ -64,6 +65,7 @@ const WishlistScreen = ({navigation}) => {
                 //marginRight:20,
                 marginBottom:10
             }}>
+
       <ScrollView
           style={{ marginBottom:90 }}
           onAddWishlist={(x) => dispatch(addToWishlist(x))}
@@ -127,9 +129,9 @@ const WishlistScreen = ({navigation}) => {
                     >
                       <Feather
                         name="trash-2"
-                        size={15}
+                        size={18}
                         color={COLORS.dark}
-                        style={{ alignItems: "center" }}
+                        style={{ alignItems: "center"}}
                         onPress={() => deleteData(item._id)}
                       />
                     </View>
@@ -137,7 +139,7 @@ const WishlistScreen = ({navigation}) => {
                     <View    
                     >
                     <TouchableOpacity style={styles.addButton1}>
-                      <Text style={{alignItems:"center"}}
+                      <Text style={{alignItems:"center" , fontWeight:"bold"}}
                       onPress={() => navigation.navigate('PaymentPage')}
                       >BUY</Text>
                       </TouchableOpacity>
@@ -268,13 +270,13 @@ const styles = StyleSheet.create({
   },
   addButton: {
     backgroundColor: COLORS.white,
-    paddingHorizontal: 40,
-    paddingVertical: 5,
+    paddingHorizontal: 25,
+    paddingVertical: 8,
 
     // borderTopRightRadius: 25,
     // borderBottomLeftRadius: 25,
-    borderRadius: 20,
-    marginTop: -20,
+    borderRadius: 15,
+    marginTop: -25,
     marginLeft: 70,
   },
   addButton1: {

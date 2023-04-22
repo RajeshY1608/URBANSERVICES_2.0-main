@@ -262,7 +262,7 @@ const Electrician = ({ navigation, params }) => {
                         >
                           <Image
                             source={require("../../assets/menuicon/heart.png")}
-                            style={{ width: 29, height: 30 }}
+                            style={{ width: 30, height: 30 ,  marginRight:20  }}
                           />
                         </TouchableOpacity>
                       ) : (
@@ -366,14 +366,14 @@ const Electrician = ({ navigation, params }) => {
                           //style={style.addedButton}
                           style={{marginLeft: 1}}
                           >
-                          <Text style={{color:COLORS.primary, marginLeft:-10, fontWeight:'900',fontSize: 12}}
+                          <Text style={{color:COLORS.light, marginLeft:-10, fontWeight:'900',fontSize: 12}}
                         
                           //onPress={() => bookingData(item)}
                          >ADDED
                          <Feather
                             name="check-circle"
                             size={16}
-                            color={COLORS.primary}
+                            color={COLORS.light}
                             style={{ alignItems: "center" }}
                             
                           />
@@ -381,7 +381,7 @@ const Electrician = ({ navigation, params }) => {
                          </View>
                         ) : (
                           <TouchableOpacity>
-                          <Text style={{color:COLORS.primary, fontWeight:'900',}}
+                          <Text style={{color:COLORS.light, fontWeight:'900',}}
                           onPressOut
                           ={()=>{
                             setBooking([...booking,item]);
@@ -391,7 +391,7 @@ const Electrician = ({ navigation, params }) => {
                           <Feather
                             name="plus-circle"
                             size={16}
-                            color={COLORS.primary}
+                            color={COLORS.light}
                             style={{ alignItems: "center" }}
                             
                           />
@@ -555,15 +555,15 @@ const style = StyleSheet.create({
     marginBottom: 20,
   },
   addButton: {
-    backgroundColor: COLORS.white,
-    paddingHorizontal: 35,
+    backgroundColor:COLORS.blue,
+    paddingHorizontal: 25,
     paddingVertical: 10,
 
     // borderTopRightRadius: 25,
     // borderBottomLeftRadius: 25,
     borderRadius: 13,
     marginTop: -120,
-    marginLeft: 40,
+    marginLeft: 45,
   },
   addedButton: {
     backgroundColor: COLORS.white,

@@ -74,9 +74,8 @@ const AllServices = () => {
               style={{
                 fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 25,
+                alignSelf:"center",
                 fontWeight:'bold',
               }}
               >Salon For Women
@@ -97,11 +96,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Salon For Man
               </Text>
@@ -122,11 +121,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Man Spa
               </Text>
@@ -147,11 +146,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Woman Spa
               </Text>
@@ -215,11 +214,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Disinfection Service
               </Text>
@@ -240,11 +239,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Full Home Cleaning
               </Text>
@@ -265,11 +264,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Bathroom & kitchen Cleaning
               </Text>
@@ -360,11 +359,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >AC Repair
               </Text>
@@ -385,11 +384,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >TV Repair
               </Text>
@@ -410,11 +409,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Fridge Repair
               </Text>
@@ -435,11 +434,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Waching Machine Repair
               </Text>
@@ -498,11 +497,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Plumber For Home
               </Text>
@@ -548,11 +547,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Home Carpenters
               </Text>
@@ -573,11 +572,11 @@ const AllServices = () => {
               </TouchableOpacity>
                <Text
               style={{
-                fontSize: 16,
+                fontSize: 18,
                 color: COLOURS.black,
-                fontWeight: '600',
                 marginBottom:2,
-                marginLeft: 10,
+                alignSelf:"center",
+                fontWeight:'bold',
               }}
               >Garden Service & Cleaning
               </Text>

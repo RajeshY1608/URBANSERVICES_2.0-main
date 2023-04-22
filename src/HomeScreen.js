@@ -19,7 +19,9 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 
+
 const HomeScreen = ({navigation}) => {
+  
 
   const [refreshing, setRefreshing] = React.useState(false);
  
@@ -110,7 +112,7 @@ const HomeScreen = ({navigation}) => {
           <StatusBar translucent={false} backgroundColor={COLORS.primary} />
           <View style={style.header}>
           <TouchableOpacity style={{alignItems:'flex-end'}}
-          onPress={() => navigation.navigate("Login")}
+          // onPress={() => navigation.navigate("Login")}
           >
           <Image
                      source={require("../assets/menuicon/bell.png")}
@@ -182,7 +184,7 @@ const HomeScreen = ({navigation}) => {
                   marginTop:10,
                 }}>
            <TouchableOpacity
-            //onPress={this.props.onPress}
+             onPress={()=> navigation.navigate("Spa")}
             style={{
                 backgroundColor:"#f5f5fa",
                 height:240,

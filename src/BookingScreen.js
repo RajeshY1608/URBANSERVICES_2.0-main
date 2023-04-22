@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity,Alert,RefreshControl } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Alert, RefreshControl } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { ScrollView } from 'react-native-gesture-handler';
 import Feather from "react-native-vector-icons/Feather";
@@ -12,15 +12,16 @@ import { useNavigation } from '@react-navigation/native';
 
 
 const BookingScreen = () => {
-
+  const [isTotalCalculated, setIsTotalCalculated] = useState(false);
   const [data, setData] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [deletedData, setDeletedData] = useState('');
   const [wishlist, setWishlist] = useState([]);
   const [booking, setBooking] = useState([]);
   const navigation = useNavigation();
 
   const [refreshing, setRefreshing] = React.useState(false);
- 
+
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     setTimeout(() => {
@@ -37,7 +38,10 @@ const BookingScreen = () => {
     try {
       const response = await axios.get(`http://${IPPORT}:4000/api/booking`);
       setData(response.data);
+      calculateTotal();
+      return;
       // console.log(response.data)
+
     } catch (error) {
       console.error(error);
     }
@@ -45,11 +49,19 @@ const BookingScreen = () => {
 
   const calculateTotal = () => {
     let total = 0;
-    booking.fetchData(item => {
-      total += item.price;
+    if (!isTotalCalculated) {
+      data.map(item => {
+        console.log(item.price);
+        total += parseInt(item.price);
+      });
 
-    });
-    return total;
+      setTotalPrice(total);
+
+      setIsTotalCalculated(true);
+    } else {
+      return;
+    }
+
   }
 
 
@@ -69,14 +81,14 @@ const BookingScreen = () => {
   return (
     <View>
       <View style={{
-                backgroundColor:"#f5f5fa",
-                height:790,
-                width:425,
-                borderRadius:20,
-                //marginTop:10,
-                //marginRight:20,
-                marginBottom:10
-            }}>
+        backgroundColor: "#f5f5fa",
+        height: 790,
+        width: 425,
+        borderRadius: 20,
+        //marginTop:10,
+        //marginRight:20,
+        marginBottom: 10
+      }}>
         <ScrollView
           style={{ marginBottom: 90 }}
           onAddWishlist={(x) => dispatch(addToWishlist(x))}
@@ -134,7 +146,7 @@ const BookingScreen = () => {
                   <View>
 
                     <TouchableOpacity
-                    onPress={() => deleteData(item._id)}
+                      onPress={() => deleteData(item._id)}
                     >
                       <View style={styles.popularCardBottom}>
                         <View style={styles.addButton}>
@@ -143,7 +155,7 @@ const BookingScreen = () => {
                             size={20}
                             color={COLORS.dark}
                             style={{ alignItems: "center" }}
-                            
+
                           />
                           {/* <Text>Booked</Text> */}
                         </View>
@@ -172,26 +184,24 @@ const BookingScreen = () => {
           }}
         >
           <>
-            {booking.map((item) => (
-              <View>
-                <Text style={{ fontSize: 20, color: COLORS.white, }}>{parseInt(item.price) }</Text>
-              </View>
-            ))}
+            <View>
+              <Text style={{ fontSize: 20, color: COLORS.white, }}>₹{totalPrice}</Text>
+            </View>
           </>
         </Text>
-        
-          <View style={styles.bookNowBtn}>
-            <TouchableOpacity>
+
+        <View style={styles.bookNowBtn}>
+          <TouchableOpacity>
             <Text
-              style={{ color: COLORS.primary, fontSize: 16, fontWeight: "bold" ,  }}
+              style={{ color: COLORS.primary, fontSize: 16, fontWeight: "bold", }}
               onPress={() => navigation.navigate("PaymentPage")}
             >
               Continue
             </Text>
-            </TouchableOpacity>
-          </View>
-       
-        
+          </TouchableOpacity>
+        </View>
+
+
       </View>
     </View>
 
@@ -230,7 +240,7 @@ const styles = StyleSheet.create({
     marginTop: -90,
 
   },
-  bottoms:{
+  bottoms: {
     paddingVertical: 5,
     paddingHorizontal: 10,
     justifyContent: 'space-between',
@@ -242,7 +252,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     bottom: 0,
-    right: 0, 
+    right: 0,
   },
 
 
@@ -321,7 +331,7 @@ const styles = StyleSheet.create({
 
     // borderTopRightRadius: 25,
     // borderBottomLeftRadius: 25,
-    borderRadius: 20,
+    borderRadius: 15,
     marginTop: -140,
     marginLeft: 70,
   },

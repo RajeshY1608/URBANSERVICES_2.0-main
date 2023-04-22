@@ -36,8 +36,6 @@ const Electrician = ({ navigation, params }) => {
 
 
 
-  
-
   const [booking , setBooking] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
@@ -125,6 +123,20 @@ const Electrician = ({ navigation, params }) => {
     }
   };
 
+  const deleteData = async (_id) => {
+    try {
+      const response = await axios.delete(`http://${IPPORT}:4000/api/wishlist/${_id}`);
+      showMessage({
+        message: "Success",
+        description: "Service Removed To WishList",
+        type: "danger",
+      })
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   // const place = route.params;
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -204,30 +216,28 @@ const Electrician = ({ navigation, params }) => {
               >
                 <View>
                   <View>
-                    <View>
+                  <View>
                       {wishlist.includes(item) ? (
                         <TouchableOpacity
-                          style={{
-                            width: 40,
-                            height: 40,
-                            backgroundColor: "#fff",
-                            borderRadius: 20,
-                            elevation: 5,
-                            position: "absolute",
-                            top: 0,
-                            right: 0,
-                            justifyContent: "center",
-                            alignItems: "center",
-                          }}
-                          // onPress={() =>
-                          //   setWishlist(
-                          //     wishlist.filter((x) => x.id !== item.id)
-                          //   )
-                          // }
+                        style={{
+                          width: 40,
+                          height: 40,
+                          position: "absolute",
+                          top: -0,
+                          right: -10,
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                          onPressOut={() => deleteData(item._id)}
+                          onPress={() =>
+                            setWishlist(
+                              wishlist.filter((x) => x.id !== item.id)
+                            )
+                          }
                         >
                           <Image
-                            source={require("../../../assets/menuicon/love.png")}
-                            style={{ width: 24, height: 24 }}
+                            source={require("../../../assets/menuicon/heart.png")}
+                            style={{ width: 30, height: 30 ,  marginRight:20  }}
                           />
                         </TouchableOpacity>
                       ) : (
@@ -235,24 +245,26 @@ const Electrician = ({ navigation, params }) => {
                           style={{
                             width: 40,
                             height: 40,
-                            backgroundColor: "#fff",
-                            borderRadius: 20,
-                            elevation: 5,
+                            //backgroundColor: "#fff",
+                            //borderRadius: 20,
+                            //elevation: 5,
                             position: "absolute",
                             top: -0,
                             right: -10,
                             justifyContent: "center",
                             alignItems: "center",
                           }}
-                          // onPress={()=>{
-                          //   setWishlist([...wishlist,item]);
-                          // }}
+                          onPressOut
+                          ={()=>{
+                            setWishlist([...wishlist,item]);
+                          }}
+                          
                           onPress={() => postData(item)}
                           
                         >
                           <Image
                             source={require("../../../assets/menuicon/love.png")}
-                            style={{ width: 24, height: 24 }}
+                            style={{ width: 30, height: 30 , marginRight:20 }}
                           />
                         </TouchableOpacity>
                       )}
@@ -331,14 +343,14 @@ const Electrician = ({ navigation, params }) => {
                           //style={style.addedButton}
                           style={{marginLeft: 1}}
                           >
-                          <Text style={{color:COLORS.primary, marginLeft:-10, fontWeight:'900',fontSize: 12}}
+                          <Text style={{color:COLORS.light, marginLeft:-10, fontWeight:'900',fontSize: 12}}
                         
                           //onPress={() => bookingData(item)}
                          >ADDED
                          <Feather
                             name="check-circle"
                             size={16}
-                            color={COLORS.primary}
+                            color={COLORS.light}
                             style={{ alignItems: "center" }}
                             
                           />
@@ -346,7 +358,7 @@ const Electrician = ({ navigation, params }) => {
                          </View>
                         ) : (
                           <TouchableOpacity>
-                          <Text style={{color:COLORS.primary, fontWeight:'900',}}
+                          <Text style={{color:COLORS.light, fontWeight:'900',}}
                           onPressOut
                           ={()=>{
                             setBooking([...booking,item]);
@@ -356,7 +368,7 @@ const Electrician = ({ navigation, params }) => {
                           <Feather
                             name="plus-circle"
                             size={16}
-                            color={COLORS.primary}
+                            color={COLORS.light}
                             style={{ alignItems: "center" }}
                             
                           />
@@ -366,7 +378,6 @@ const Electrician = ({ navigation, params }) => {
                       
                       </View>
                     </View>
-                  
                   </View>
                 </View>
 
@@ -485,15 +496,15 @@ const style = StyleSheet.create({
     marginBottom: 20,
   },
   addButton: {
-    backgroundColor: COLORS.white,
-    paddingHorizontal: 35,
+    backgroundColor:COLORS.blue,
+    paddingHorizontal: 25,
     paddingVertical: 10,
 
     // borderTopRightRadius: 25,
     // borderBottomLeftRadius: 25,
     borderRadius: 13,
     marginTop: -120,
-    marginLeft: 40,
+    marginLeft: 45,
   },
   ratingWrapper: {
     flexDirection: "row",
